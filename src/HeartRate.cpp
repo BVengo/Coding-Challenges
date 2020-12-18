@@ -11,6 +11,6 @@ int main() {
         double ABPM = 60.0/p;
         double BPM = ABPM*b;
 
-        std::cout << BPM-ABPM << " " << BPM << " " << BPM + ABPM << std::endl;
+        std::cout << BPM-ABPM << ' ' << BPM << ' ' << BPM + ABPM << std::endl;
     }
 }
