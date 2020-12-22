@@ -56,7 +56,10 @@
 			"iomanip": "cpp",
 			"ctime": "cpp",
 			"xlocmon": "cpp",
-			"xloctime": "cpp"
+			"xloctime": "cpp",
+			"algorithm": "cpp",
+			"bitset": "cpp",
+			"sstream": "cpp"
 		}
 	}
 }
