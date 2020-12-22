@@ -53,7 +53,10 @@
 			"vector": "cpp",
 			"xhash": "cpp",
 			"xtree": "cpp",
-			"iomanip": "cpp"
+			"iomanip": "cpp",
+			"ctime": "cpp",
+			"xlocmon": "cpp",
+			"xloctime": "cpp"
 		}
 	}
 }
