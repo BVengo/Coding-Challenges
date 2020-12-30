@@ -26,11 +26,11 @@ while(TRUE) {
   page <- page + 1
 }
 
-lapply(links$V1, function(problem) {
+for(problem in links$V1) {
   if(file.exists(paste0("../complete/", problem)) || file.exists(paste0("../incomplete/", problem))) {
-    return()
+    continue()
   }
   
   file.copy("../template.cpp", "../incomplete/")
   file.rename("../incomplete/template.cpp", paste0("../incomplete/", problem))
-})
+}
