@@ -59,7 +59,8 @@
 			"xloctime": "cpp",
 			"algorithm": "cpp",
 			"bitset": "cpp",
-			"sstream": "cpp"
+			"sstream": "cpp",
+			"set": "cpp"
 		}
 	}
 }
