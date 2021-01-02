@@ -28,7 +28,7 @@ while(TRUE) {
 
 for(problem in links$V1) {
   if(file.exists(paste0("../complete/", problem)) || file.exists(paste0("../incomplete/", problem))) {
-    continue()
+    next
   }
   
   file.copy("../template.cpp", "../incomplete/")
