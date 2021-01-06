@@ -1,3 +1,6 @@
+packages <- c("rvest", "magrittr", "data.table")
+install.packages(setdiff(packages, rownames(installed.packages())))
+
 library(rvest)
 library(magrittr)
 library(data.table)
