@@ -60,7 +60,11 @@
 			"algorithm": "cpp",
 			"bitset": "cpp",
 			"sstream": "cpp",
-			"set": "cpp"
+			"set": "cpp",
+			"locale": "cpp",
+			"regex": "cpp",
+			"xlocbuf": "cpp",
+			"xlocmes": "cpp"
 		}
 	}
 }
