@@ -17,6 +17,7 @@
 			"cstdio": "cpp",
 			"cstdlib": "cpp",
 			"cstring": "cpp",
+			"curl": "cpp",
 			"cwchar": "cpp",
 			"exception": "cpp",
 			"initializer_list": "cpp",

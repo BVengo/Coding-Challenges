@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+Kattis/src/web/kattisrc.txt
+
+Kattis/src/web/.kattisrc
