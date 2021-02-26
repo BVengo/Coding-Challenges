@@ -1,3 +1,6 @@
+#################################
+# Working directory is 'Kattis'
+#################################
 packages <- c("rvest", "magrittr", "data.table")
 install.packages(setdiff(packages, rownames(installed.packages())))
 
@@ -22,7 +25,7 @@ while(TRUE) {
     break
   }
   
-  curr.links[, V1 := paste0(gsub('/problems/', '', V1), ".cpp")]
+  curr.links[, V1 := gsub('/problems/', '', V1)]
   
   links <- rbind(links, curr.links)
   
@@ -30,10 +33,10 @@ while(TRUE) {
 }
 
 for(problem in links$V1) {
-  if(file.exists(paste0("../complete/", problem)) || file.exists(paste0("../incomplete/", problem))) {
+  if(file.exists(paste0("src/complete/", problem)) || file.exists(paste0("src/incomplete/", problem))) {
     next
   }
   
-  file.copy("../template.cpp", "../incomplete/")
-  file.rename("../incomplete/template.cpp", paste0("../incomplete/", problem))
+  file.copy("src/template.cpp", "src/incomplete/")
+  file.rename("src/incomplete/template.cpp", paste0("src/incomplete/", problem, '.cpp'))
 }

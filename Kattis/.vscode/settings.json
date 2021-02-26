@@ -57,6 +57,10 @@
 		"xlocmes": "cpp",
 		"xlocmon": "cpp",
 		"xloctime": "cpp",
-		"xtree": "cpp"
+		"xtree": "cpp",
+		"filesystem": "cpp",
+		"chrono": "cpp",
+		"fstream": "cpp",
+		"ratio": "cpp"
 	}
 }
