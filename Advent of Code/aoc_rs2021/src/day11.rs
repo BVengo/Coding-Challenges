@@ -2,18 +2,19 @@ const GRID_SIZE: usize = 10;
 
 pub fn compute(input: &str) -> (u32, usize) {
 
-    let mut grid = input.lines().map(|l| {
+    let grid = input.lines().map(|l| {
         l.chars().map(|c| {
             c.to_digit(10).unwrap()
         }).collect()
     }).collect::<Vec<Vec<u32>>>();
 
-    let flash_results = (0..100).map(|_i| flash_grid(&mut grid)).collect::<Vec<(u32, bool)>>();
+    let mut grid_p1 = grid.to_vec();
+    let mut grid_p2 = grid.to_vec();
 
-    let p1 = flash_results.iter().map(|r| r.0).sum();
+    let p1 = (0..GRID_SIZE * GRID_SIZE).map(|_i| flash_grid(&mut grid_p1).0).sum();
     let mut p2 = 1;
 
-    while !flash_grid(&mut grid).1 {
+    while !flash_grid(&mut grid_p2).1 {
         p2 += 1;
     }
     
@@ -33,7 +34,7 @@ fn flash_grid(grid: &mut Vec<Vec<u32>>) -> (u32, bool) {
         *flashed_octopus = 0;
     }
 
-    (num_flashed, num_flashed == 100)
+    (num_flashed, num_flashed as usize == (GRID_SIZE * GRID_SIZE))
 }
 
 fn flash_octopus(grid: &mut Vec<Vec<u32>>, row: isize, col: isize) -> u32 {
@@ -48,17 +49,12 @@ fn flash_octopus(grid: &mut Vec<Vec<u32>>, row: isize, col: isize) -> u32 {
         return 0;
     }
 
-    let mut num_flashed = 1;
-
-    num_flashed += 
-        flash_octopus(grid, row - 1, col) +
+    flash_octopus(grid, row - 1, col) +
         flash_octopus(grid, row - 1, col - 1) +
         flash_octopus(grid, row - 1, col + 1) +
         flash_octopus(grid, row + 1, col) +
         flash_octopus(grid, row + 1, col - 1) +
         flash_octopus(grid, row + 1, col + 1) +
         flash_octopus(grid, row, col - 1) +
-        flash_octopus(grid, row, col + 1);
-    
-    num_flashed
+        flash_octopus(grid, row, col + 1)
 }
